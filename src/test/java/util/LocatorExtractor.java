@@ -15,7 +15,7 @@ public class LocatorExtractor {
         Object findBy = FieldUtils.readField(locator, "by", true);
         return Optional.of(findBy)
                 .map(Object::toString)
-                .orElseThrow(() -> new IllegalStateException("Unable to retrieve By locator from WebElement"));
+                .orElseThrow(() -> new IllegalStateException("Unable to retrieve By locator string representation from WebElement object"));
     }
 
     public static By getLocator(WebElement element) {
